@@ -34,6 +34,11 @@
             dropDownIsOpen : !this.state.dropDownIsOpen
           });
         },
+        handleHover : function() {
+          this.setState({
+            dropDownIsOpen : true
+          });
+        },
         renderDropdown: function () {
           return (
             <div style={{ background: "#ccc" }}>
@@ -45,7 +50,7 @@
           var dropdown = this.state.dropDownIsOpen ? this.renderDropdown() : null;
 
           return (
-            <div onClick={this.handleClick}>
+            <div onClick={this.handleClick} onMouseOver={this.handleHover}>
               Click me!
               {dropdown}
             </div>
